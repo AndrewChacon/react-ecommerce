@@ -1,0 +1,31 @@
+.item-card {
+  margin: 0 auto;
+  &__name {
+    font-size: 22px;
+    font-weight: 200;
+  }
+  &__price {
+    font-size: 18px;
+    color: #aaa;
+    font-weight: 300;
+  }
+  &__button {
+    margin-top: 20px;
+  }
+}
+
+hr {
+  margin: 0 !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .item-card {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .item-card {
+    width: 90%;
+  }
+}
