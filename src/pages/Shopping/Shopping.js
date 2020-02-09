@@ -1,12 +1,11 @@
 import React from 'react';
-import { Container, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import "./Shopping.scss";
 import { ItemCard } from '../../components/ItemCard/ItemCard';
 
 export const Shopping = () => {
   return (
     <div>
-      <Container>
         <div className="wrapper">
           <ItemCard itemName="The Self-Taught Programmer" itemPrice="20.78" />
           <ItemCard itemName="C Programming Language" itemPrice="51.99" />
@@ -18,7 +17,6 @@ export const Shopping = () => {
           <ItemCard itemName="Electronic Accessory Organizer Panel" itemPrice="22.99" />
           <ItemCard itemName="Jotaro Kujo Hat" itemPrice="23.30" />
         </div>
-      </Container>
 
       <div className="pag-wrapper">
         <Pagination aria-label="Page navigation example">
