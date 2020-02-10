@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import "./Navigation.scss";
 
 const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navigation = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="sm">
+      <Navbar color="dark" dark expand="sm" className="navigation-bar">
         <NavbarBrand href="/">StoreName&nbsp;<i className="fas fa-store"></i></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
