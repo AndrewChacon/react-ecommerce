@@ -23,7 +23,7 @@ export const ItemView = () => {
                 value={productNumber}
                 onChange={e => setProductNumber(e.target.value)}
               />
-              <Button className="item-view__form-button">Add To Cart &nbsp;<i className="fas fa-plus"></i></Button>
+              <Button className="item-view__form-button">Add Item &nbsp;<i className="fas fa-plus"></i></Button>
             </div>
           </Form>
         </div>

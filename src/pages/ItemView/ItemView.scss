@@ -34,7 +34,7 @@
     display: grid;
     // width: 250px;
     width: 100%;
-    grid-template-columns: 1fr 129px;
+    grid-template-columns: 1fr 120px;
   }
   &__input {
     width: 100% !important;
@@ -46,7 +46,7 @@
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     border-left: none !important;
-    font-size: 3.5vw !important;
+    font-size: 3vw;
   }
   &__product-details {
     padding: 15px 15px 30px 15px;
@@ -65,6 +65,12 @@
 
 hr {
   margin: 0 !important;
+}
+
+@media only screen and (min-width: 450px) {
+  &__form-button {
+    font-size: 10px !important;
+  }
 }
 
 @media only screen and (min-width: 760px) {
@@ -88,9 +94,6 @@ hr {
       padding: 35px;
       grid-area: grid-description;
       border-top: 1px solid rgba(95, 95, 95, 0.246);
-    }
-    &__form-button {
-      font-size: 16px !important;
     }
   }
 }
