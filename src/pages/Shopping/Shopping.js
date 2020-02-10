@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+// import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import "./Shopping.scss";
 import { ItemCard } from '../../components/ItemCard/ItemCard';
 
@@ -18,7 +18,7 @@ export const Shopping = () => {
           <ItemCard itemName="Jotaro Kujo Hat" itemPrice="23.30" />
         </div>
 
-      <div className="pag-wrapper">
+      {/* <div className="pag-wrapper">
         <Pagination aria-label="Page navigation example">
           <PaginationItem>
             <PaginationLink first href="/" />
@@ -58,7 +58,7 @@ export const Shopping = () => {
             <PaginationLink last href="/" />
           </PaginationItem>
         </Pagination>
-      </div>
+      </div> */}
     </div>
   )
 }

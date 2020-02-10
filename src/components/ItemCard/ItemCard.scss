@@ -1,7 +1,8 @@
 .item-card {
   margin: 0 auto;
+  width: 80%;
   &__name {
-    font-size: 22px;
+    font-size: 6vw;
     font-weight: 200;
   }
   &__price {
@@ -18,14 +19,15 @@ hr {
   margin: 0 !important;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 600px) {
   .item-card {
     width: 100%;
+    &__name {
+      font-size: 22px;
+    }
   }
 }
 
-@media only screen and (max-width: 770px) {
-  .item-card {
-    width: 90%;
-  }
-}
+// @media only screen and (min-width: 950px) {
+  //largae screen
+// }
