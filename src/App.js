@@ -3,6 +3,7 @@ import Navigation from './components/layout/Navigation/Navigation';
 import { Shopping } from './pages/Shopping/Shopping';
 import { ItemView } from './pages/ItemView/ItemView';
 import { Container } from 'reactstrap';
+import { CreateItem } from './pages/CreateItem/CreateItem';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
        <Container>
         <ItemView />
         {/* <Shopping /> */}
+        {/* <CreateItem /> */}
        </Container>
     </div>
   );
