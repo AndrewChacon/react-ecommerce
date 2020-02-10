@@ -21,10 +21,15 @@
     display: inline-block;
   }
   &__input {
-    margin-bottom: 20px;
+    width: 150px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-right: none !important;
   }
   &__form-button {
-
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-left: none !important;
   }
   &__product-details {
     padding: 15px;
@@ -51,9 +56,13 @@ hr {
     row-gap: 40px;
     width: 100%;
     &__input {
-      margin-bottom: 0px;
-      margin-right: 10px;
+      width: 200px !important;
     }
+    // &__form-button {
+    //   border-top-left-radius: 0px !important;
+    //   border-bottom-left-radius: 0px !important;
+    //   border-left: none !important;
+    // }
     &__product-id {
       margin-bottom: 20px !important;
     }

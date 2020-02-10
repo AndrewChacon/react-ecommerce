@@ -16,7 +16,7 @@ export const ItemView = () => {
             Product ID Code
           </Alert>
           <Form inline>
-            <Input className="item-view__input" type="number" name="productNumber" />
+            <Input className="item-view__input" type="number" name="productNumber" min="1" max="99" />
             <Button className="item-view__form-button">Add To Cart</Button>
           </Form>
         </div>
