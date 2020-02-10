@@ -1,14 +1,22 @@
 .item-view {
   display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
   width: 90%;
   margin: 0 auto;
-  grid-template-columns: 1fr;
-  row-gap: 10px;
+  grid-template-areas: 
+    "grid-image grid-image"
+    "grid-details grid-details"
+    "grid-description grid-description"
+  ;
+  &__product-display {
+    grid-area: grid-image;
+  }
   &__image {
     width: 100%;
   }
   &__cart-details {
-    padding: 15px;
+    padding: 35px;
+    grid-area: grid-details;
   }
   &__product-name {
     font-weight: 300;
@@ -16,12 +24,20 @@
   }
   &__product-price {
     font-weight: 200;
+    color: #384046 !important;
   }
   &__product-id {
     display: inline-block;
+    padding: 8px 16px !important;
+  }
+  &__form-group {
+    display: grid;
+    // width: 250px;
+    width: 100%;
+    grid-template-columns: 1fr 129px;
   }
   &__input {
-    width: 150px !important;
+    width: 100% !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     border-right: none !important;
@@ -32,7 +48,8 @@
     border-left: none !important;
   }
   &__product-details {
-    padding: 15px;
+    padding: 15px 15px 30px 15px;
+    grid-area: grid-description
   }
   &__product-heading {
 
@@ -49,36 +66,33 @@ hr {
   margin: 0 !important;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 760px) {
   .item-view {
     grid-template-columns: 30% 1fr;
-    column-gap: 40px;
-    row-gap: 40px;
     width: 100%;
-    &__input {
-      width: 200px !important;
-    }
-    // &__form-button {
-    //   border-top-left-radius: 0px !important;
-    //   border-bottom-left-radius: 0px !important;
-    //   border-left: none !important;
-    // }
+    grid-template-areas: 
+    "grid-image grid-details"
+    "grid-description grid-description"
+    ;
     &__product-id {
       margin-bottom: 20px !important;
     }
     &__cart-details {
-      padding: 30px 15px;
+      border-left: 1px solid rgba(95, 95, 95, 0.246);
     }
-    // &__product-details {
-    //   border-top: 1px solid grey !important;
-    // }
+    &__form-group {
+      width: 250px;
+    }
+    &__product-details {
+      padding: 35px;
+      grid-area: grid-description;
+      border-top: 1px solid rgba(95, 95, 95, 0.246);
+    }
   }
 }
 
 @media only screen and (min-width: 950px) {
   .item-view {
-  grid-template-columns: 350px 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
+  grid-template-columns: 450px 1fr !important;
   }
 }
