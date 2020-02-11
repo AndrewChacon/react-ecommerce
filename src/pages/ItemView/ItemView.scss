@@ -32,7 +32,6 @@
   }
   &__form-group {
     display: grid;
-    // width: 250px;
     width: 100%;
     grid-template-columns: 1fr 120px;
   }
@@ -46,7 +45,6 @@
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     border-left: none !important;
-    // font-size: 3vw;
   }
   &__product-details {
     padding: 15px 15px 30px 15px;
