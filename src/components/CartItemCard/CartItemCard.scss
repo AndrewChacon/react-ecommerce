@@ -1,0 +1,17 @@
+.card-item {
+  width: 800px;
+  display: grid !important;
+  margin: 0 auto;
+  grid-template-columns: 150px 3fr;
+  &__body {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr 110px;
+  }
+  &__title {
+    margin: 0 !important;
+  }
+  &__price {
+    margin: 0 !important;
+  }
+}
