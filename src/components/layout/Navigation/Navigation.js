@@ -42,8 +42,18 @@ const Navigation = (props) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">Log Out &nbsp;<i className="fas fa-sign-out-alt"></i></NavLink>
+              <NavLink>
+                <Link className="navigation-bar__link" to="/login">Login &nbsp;<i class="far fa-user-circle"></i></Link>
+              </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="navigation-bar__link" to="/register">Register &nbsp;<i class="far fa-user-circle"></i></Link>
+              </NavLink>
+            </NavItem>
+            {/* <NavItem>
+              <NavLink href="/">Log Out &nbsp;<i className="fas fa-sign-out-alt"></i></NavLink>
+            </NavItem> */}
           </Nav>
           {/* <NavbarText>Log Out</NavbarText> */}
         </Collapse>
