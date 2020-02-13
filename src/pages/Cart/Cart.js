@@ -1,19 +1,47 @@
-import React from 'react' 
+import React, { useState } from 'react' 
 import "./Cart.scss"
 import { CartItemCard } from '../../components/CartItemCard/CartItemCard'
 
 function Cart(props) {
+  const [items, removeItem] = useState([
+    {
+      id: 1,
+      title: "Pewdiepie's Gaming Chair",
+      price: 399.99
+    },
+    {
+      id: 2,
+      title: "Software Book",
+      price: 79.99
+    },
+    {
+      id: 3,
+      title: "Pewdiepie's Gaming Chair",
+      price: 399.99
+    },
+    {
+      id: 4,
+      title: "Pewdiepie's Gaming Chair",
+      price: 399.99
+    },
+  ])
   return (
     <div className="cart">
-      <CartItemCard />
-      <CartItemCard />
-      <CartItemCard />
+      {
+        items.length > 0 ?
+        (
+          items.map(item => {
+            return <CartItemCard
+                    title={item.title} 
+                    price={item.price} 
+                    removeItem={(e) => removeItem(items.filter(item_ => item_.id != item.id))}
+                    />
+          })
+        ):
+        (<h1>Cart has no items...</h1>)
+      }
     </div>
   )
-}
-
-Cart.propTypes = {
-
 }
 
 export default Cart
