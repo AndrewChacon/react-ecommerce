@@ -1,0 +1,17 @@
+.register {
+  // width: 600px;
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .register {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .register {
+    width: 600px !important;
+  }
+} 
