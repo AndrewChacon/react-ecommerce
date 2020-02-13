@@ -34,7 +34,7 @@ function Cart(props) {
             return <CartItemCard
                     title={item.title} 
                     price={item.price} 
-                    removeItem={(e) => removeItem(items.filter(item_ => item_.id != item.id))}
+                    removeItem={(e) => removeItem(items.filter(item_ => item_.id !== item.id))}
                     />
           })
         ):

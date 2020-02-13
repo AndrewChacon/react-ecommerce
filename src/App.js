@@ -4,9 +4,11 @@ import { Shopping } from './pages/Shopping/Shopping';
 import { ItemView } from './pages/ItemView/ItemView';
 import { Container } from 'reactstrap';
 import { CreateItem } from './pages/CreateItem/CreateItem';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Cart from './pages/Cart/Cart';
 import { Account } from './pages/Account/Account';
+import { Login } from './pages/Login/Login';
+import { Register } from './pages/Register/Register';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route exact path="/create" component={CreateItem} />
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/account" component={Account} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/" component={Shopping} />
           </Switch>
           </Container>
