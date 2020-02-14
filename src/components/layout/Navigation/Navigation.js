@@ -7,6 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
+  NavbarText
 } from 'reactstrap';
 import "./Navigation.scss";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const Navigation = (props) => {
   return (
 
 
-      <Navbar color="dark" dark expand="sm" className="navigation-bar">
+      <Navbar color="dark" dark expand="md" className="navigation-bar">
         <NavbarBrand>
           <Link className="navigation-bar__link" to="/">StoreName&nbsp;<i className="fas fa-store"></i></Link>
         </NavbarBrand>
@@ -55,7 +56,9 @@ const Navigation = (props) => {
               <NavLink href="/">Log Out &nbsp;<i className="fas fa-sign-out-alt"></i></NavLink>
             </NavItem> */}
           </Nav>
-          {/* <NavbarText>Log Out</NavbarText> */}
+          {/* <NavbarText>
+          <Link className="navigation-bar__link" to="/register">Register &nbsp;<i class="far fa-user-circle"></i></Link>
+          </NavbarText> */}
         </Collapse>
       </Navbar>
 

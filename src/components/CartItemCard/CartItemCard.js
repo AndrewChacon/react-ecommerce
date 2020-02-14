@@ -11,9 +11,9 @@ export const CartItemCard = ({ title, price, removeItem}) => {
     <Card className="card-item">
       <CardImg src={ProductImage} alt="Product Image" />
       <CardBody className="card-item__body">
-  <CardTitle className="card-item__title">{title}</CardTitle>
+        <CardTitle className="card-item__title">{title}</CardTitle>
         <CardText className="card-item__price">{price}</CardText>
-        <Button onClick={e => removeItem()} color="danger">Remove &nbsp;<i className="fas fa-trash-alt"></i></Button>
+        <Button className="card-item__button" onClick={e => removeItem()} color="danger">Remove &nbsp;<i className="fas fa-trash-alt"></i></Button>
       </CardBody>
     </Card>
   )
