@@ -1,17 +1,17 @@
-.account {
+.orders{
   // width: 600px;
   width: 90% !important;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
-  .account {
+  .orders{
     width: 100% !important;
   }
 }
 
 @media only screen and (min-width: 800px) {
-  .account {
+  .orders{
     width: 600px !important;
   }
 } 
