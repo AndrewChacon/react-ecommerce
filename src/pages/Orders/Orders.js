@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Orders.scss"
-import { Button, Form, FormGroup, Label, Input, Table } from 'reactstrap'
+import { Table } from 'reactstrap'
 
 export const Orders = () => {
   const [orders, setOrders] = useState([
@@ -37,10 +37,11 @@ export const Orders = () => {
         <tbody>
           {
             orders.length > 0 ?
-            (orders.map(order => {
-              const { orderNumber, purchaseDate, total } = order;
-            return <tr><th scope="row">{orderNumber}</th><td>{purchaseDate}</td><td>${total}</td></tr>})
-            ) : (<h1>You have no previous orders</h1>)
+              (orders.map(order => {
+                const { orderNumber, purchaseDate, total } = order;
+                return <tr><th scope="row">{orderNumber}</th><td>{purchaseDate}</td><td>${total}</td></tr>
+              })
+              ) : (<h1>You have no previous orders</h1>)
           }
         </tbody>
       </Table>
@@ -48,7 +49,7 @@ export const Orders = () => {
   )
 }
 
-          {/* <tr>
+{/* <tr>
             <th scope="row">113-7112181-7070633</th>
             <td>2/16/2020</td>
             <td>$74.40</td>
