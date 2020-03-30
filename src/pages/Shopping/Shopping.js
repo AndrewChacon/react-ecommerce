@@ -1,22 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import "./Shopping.scss";
+import './Shopping.scss';
 import { ItemCard } from '../../components/ItemCard/ItemCard';
+import { connect } from 'react-redux';
+import { getItems } from '../../actions/items';
 
-export const Shopping = () => {
+const Shopping = ({ getItems, items }) => {
+  useEffect(() => {
+    getItems();
+  }, []);
+
   return (
     <div>
-        <div className="wrapper">
-          <ItemCard itemName="The Self-Taught Programmer" itemPrice="20.78" />
-          <ItemCard itemName="C Programming Language" itemPrice="51.99" />
-          <ItemCard itemName="Victrola Vintage Suitcase Turntable with Speakers" itemPrice="44.86" />
-          <ItemCard itemName="Best Developer Coffee Mug" itemPrice="19.95" />
-          <ItemCard itemName="The Bro Code" itemPrice="9.49" />
-          <ItemCard itemName="The Clean Coder" itemPrice="28.99" />
-          <ItemCard itemName="Clean Architecture" itemPrice="23.49" />
-          <ItemCard itemName="Electronic Accessory Organizer Panel" itemPrice="22.99" />
-          <ItemCard itemName="Jotaro Kujo Hat" itemPrice="23.30" />
-        </div>
+      <div className="wrapper">
+        {/* <ItemCard itemName="The Self-Taught Programmer" itemPrice="20.78" />
+        <ItemCard itemName="C Programming Language" itemPrice="51.99" />
+        <ItemCard
+          itemName="Victrola Vintage Suitcase Turntable with Speakers"
+          itemPrice="44.86"
+        />
+        <ItemCard itemName="Best Developer Coffee Mug" itemPrice="19.95" />
+        <ItemCard itemName="The Bro Code" itemPrice="9.49" />
+        <ItemCard itemName="The Clean Coder" itemPrice="28.99" />
+        <ItemCard itemName="Clean Architecture" itemPrice="23.49" />
+        <ItemCard
+          itemName="Electronic Accessory Organizer Panel"
+          itemPrice="22.99"
+        />
+        <ItemCard itemName="Jotaro Kujo Hat" itemPrice="23.30" /> */}
+        {items.map((item, key) => {
+          return (
+            <ItemCard
+              key={item.id}
+              itemName={item.name}
+              itemPrice={item.price}
+              itemImage={item.imgUrl}
+            />
+          );
+        })}
+      </div>
 
       {/* <div className="pag-wrapper">
         <Pagination aria-label="Page navigation example">
@@ -60,5 +82,12 @@ export const Shopping = () => {
         </Pagination>
       </div> */}
     </div>
-  )
-}
+  );
+};
+
+const mapStateToProps = state => ({
+  // isAuthenticated: state.auth.isAuthenticated
+  items: state.items.items
+});
+
+export default connect(mapStateToProps, { getItems })(Shopping);
