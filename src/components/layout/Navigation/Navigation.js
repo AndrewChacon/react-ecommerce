@@ -10,13 +10,15 @@ import {
 } from 'reactstrap';
 import './Navigation.scss';
 import { Link } from 'react-router-dom';
+import { logout } from '../../../actions/auth';
+import { connect } from 'react-redux';
 
-const Navigation = props => {
+const Navigation = ({ logout, isAuthenticated }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-  const toggleNavigation = () => setIsAuthenticated(!isAuthenticated);
+  const toggleNavigation = () => setIsAuth(!isAuth);
 
   return (
     <Navbar color="dark" dark expand="md" className="navigation-bar">
@@ -62,7 +64,7 @@ const Navigation = props => {
                 <NavLink>
                   <Link
                     to="/"
-                    onClick={toggleNavigation}
+                    onClick={logout}
                     className="navigation-bar__link"
                   >
                     Log Out &nbsp;<i className="fas fa-user"></i>
@@ -94,4 +96,8 @@ const Navigation = props => {
   );
 };
 
-export default Navigation;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { logout })(Navigation);

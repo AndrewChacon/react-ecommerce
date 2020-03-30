@@ -1,4 +1,4 @@
-import { axios } from 'axios';
+import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken';
 import {
   REGISTER_SUCCESS,
@@ -14,7 +14,7 @@ export const loadUser = () => async dispatch => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get('/auth-user');
+    const res = await axios.get('http://localhost:5000/get-user');
     dispatch({
       type: USER_LOADED,
       payload: res.data
@@ -32,7 +32,11 @@ export const register = ({ name, email, password }) => async dispatch => {
   };
   const body = JSON.stringify({ name, email, password });
   try {
-    const res = await axios.post('/create-user', body, config);
+    const res = await axios.post(
+      'http://localhost:5000/create-user',
+      body,
+      config
+    );
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data
@@ -43,21 +47,30 @@ export const register = ({ name, email, password }) => async dispatch => {
   }
 };
 
-export const login = (email, password) => async dispatch => {
+export const login = ({ email, password }) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({ email, password });
-  const res = await axios.post('/auth-user', body, config);
-  dispatch({
-    type: LOGIN_SUCCESS,
-    payload: res.data
-  });
+
   try {
+    const res = await axios.post(
+      'http://localhost:5000/auth-user',
+      body,
+      config
+    );
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data
+    });
+    dispatch(loadUser());
   } catch (error) {
-    dispatch({ type: LOGIN_FAILED });
+    console.log(error);
+    dispatch({
+      type: LOGIN_FAILED
+    });
   }
 };
 
