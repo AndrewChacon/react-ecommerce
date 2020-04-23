@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
-import placeholderImage from '../../img/image.png';
 import './ItemCard.scss';
 import { Link } from 'react-router-dom';
 
